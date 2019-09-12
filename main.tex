@@ -1,0 +1,72 @@
+%--Packages
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr} %--for fancy header/ footers
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{verbatimbox}
+\usepackage{geometry}
+\usepackage[pagestyles]{titlesec}
+
+
+
+%--Parameters
+\title{Proof of Concept I}
+\author{Aaron Hammond\\43691455}
+\date{September 2019}
+\geometry{margin=2.5cm}
+\fancyhfoffset{0em}
+\definecolor{collink}{RGB}{45, 95, 140}
+\titleformat{\section}{\normalfont\Large\bfseries}{}{0em}{}
+\hypersetup{
+colorlinks,
+linkcolor=collink,
+linktoc=all
+}
+
+%--Page Setup
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\rhead{Proof of Concept Design}
+\lhead{Digital Humanities}
+
+\fancyfoot[R,RO]{Aaron Hammond | 43691455}
+\fancyfoot[L,LO]{Page: \thepage}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+%--Commands
+
+\newcommand\HRule{\rule{\textwidth}{1pt}} %-- horizontal lines for formatting
+
+%--
+\begin{document}
+
+\begin{center}
+%\HRule\\[0.4cm]
+\huge{Proof of Concept Design}\\[0.4cm]
+\huge{Aaron Hammond}\\[0.3cm]
+\large{\today}\\[0.4cm]
+
+\HRule \\[1cm]
+\end{center}
+
+%--
+
+\section{Story and Acceptance Criteria}
+In this step i attempted to use the range of audio transcribers. While in future i will test Alveo's service. For the sake of this elaboration i manually transcribed using oTranscriber. Manually transcribing wasn't as laborious as I had anticipated and depending on the success I have with Alveo, it's good to know that oTranscriber will be a viable backup plan.
+
+\section{Categorise user stories into themes and identify prerequisites}
+In this step we will identify common themes throughout the user stories
+\section{Load these user stories into your project management system}
+In this step we will add these stories to our project management software
+\section{Export a report from your project management system so that your peers can see how you organised your tasks on Cloudstor.}
+We will now export a report
+\section{Create a plan for your quality assurance}
+Create a testing plan to ensure quality
+\section{Make sure that once you’ve planned out all of your user stories, they can accomplish the goal you set for yourself in scoping}
+Is the projects goal achievable?
+
+\end{document}
