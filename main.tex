@@ -60,15 +60,14 @@ This document's purpose is to deconstruct the design and process of my proposed 
 \section{Stories and Acceptance Criteria}
 \subsection{User Stories}
 \begin{enumerate}
-    \item As a researcher, I want the ability to compare and analyse all my different data types together.
-
-    \item As a researcher, I want to be able to convert my sources, text and data into a single workable format.
+    
+    \item As a researcher, I want the ability to convert recorded conversations into a text format.
+    
+    \item As a researcher, I want the ability to analyse various sources of data together.
     
     \item As a researcher, I want to organise my different sources so their origin can be easily identified.
     
     \item As a researcher, I want the ability to submit all my sources for analysis with a single step or upload.
-    
-    \item As a researcher, with concerns for privacy I do not want my information or research to be available to anyone else.
     
     \item As a researcher, I want to be able to submit multiple files for conversion or upload in order to mitigate repeating tasks.
     
@@ -81,7 +80,53 @@ This document's purpose is to deconstruct the design and process of my proposed 
 \end{enumerate}
 
 \section{Categorise user stories into themes and identify prerequisites}
-In this step we will identify common themes throughout the user stories
+The whole solution works according to three main steps. Conversion, Organisation and Analysis. This process depends on the file sources as already having been collected and available locally on my computer. Additionally the following steps must be performed in order from top to bottom. Items written in bold are steps that must be fulfilled to meet the requirements, items in italics are optional.
+\subsection{Conversion}
+This initial stage is concerned with converting the various types of sources into a single, workable format.
+
+\subsubsection{Interviews}
+
+As a researcher i should be able to:
+\begin{enumerate}
+    \item Submit audio files for transcription.
+    \item\textbf{Retrieve transcribed audio files as a simple-text file}
+    \item\textbf{Save text file into the audio folder}
+\end{enumerate}
+\subsubsection{Literature}
+As a researcher i should be able to:
+\begin{enumerate}
+    \item Select files for analysis
+    \item Load files into a program
+    \item\textbf{Convert files into a simple-text files}
+    \item\textbf{Export or Save files into the literature folder}
+\end{enumerate}
+
+\subsubsection{Fieldnotes}
+As a researcher i should be able to:
+\begin{enumerate}
+    \item Open the Joplin program
+    \item Select and export field notes
+    \item\textbf{Export to the fieldnotes folder}
+\end{enumerate}
+
+\subsection{Organisation}
+As a researcher i should be able to:
+\begin{enumerate}
+    \item Navigate to the parent folder
+    \item\textbf{Run a script}
+    \item\textbf{See all my sources located within a single folder with their appropriate prefix attached}
+\end{enumerate}
+
+\subsection{Analysis}
+As a researcher i should be able to:
+\begin{enumerate}
+    \item Open my preferred software for analysis
+    \item\textbf{Import all converted sources for comparison analysis}
+    \item\textit{View the results of the analysis and trace their origin}
+    \item\textbf{Identify new links between sources}
+    \item\textit{Export the results as a report for record keeping}
+\end{enumerate}
+
 \section{Load these user stories into your project management system}
 In this step we will add these stories to our project management software
 \section{Export a report from your project management system so that your peers can see how you organised your tasks on Cloudstor.}
