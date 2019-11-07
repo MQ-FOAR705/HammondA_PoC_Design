@@ -54,14 +54,20 @@ linktoc=all
 \end{center}
 
 %--
-\section{Aim}
-This document's purpose is to deconstruct the design and process of my proposed solution. This analysis will help to unpack the steps and experiences involved in the solution thus far.
+
+This document's purpose is to outline the software project that I have been working on for Digital Humanities. It is a solution that converts a range of file types to text files for analysis within the VoyantServer software. 
+
+\section{Prerequisites}
+
 
 \section{Stories and Acceptance Criteria}
 \subsection{User Stories}
 \begin{enumerate}
+    \item As a researcher, I want the ability to convert PDF files into a simple text format.
     
     \item As a researcher, I want the ability to convert recorded conversations into a text format.
+    
+    \item As a researcher, I want to export my field notes for analysis.
     
     \item As a researcher, I want the ability to analyse various sources of data together.
     
@@ -73,9 +79,9 @@ This document's purpose is to deconstruct the design and process of my proposed 
     
     \item As a researcher, I want the ability to analyse the lexicon of my source.
     
-    \item As a researcher, I want to be able to identify and trace the analyis' results.
+    \item As a researcher, I want to be able to identify and trace the analysis' results.
     
-    \item As a researcher, I want the ability to produce a report of the analysis that contains the necessary information.
+    \item As a researcher, I want the ability to access my data and research from other computers via. auto-backup to the cloud
     
 \end{enumerate}
 
@@ -88,34 +94,27 @@ This initial stage is concerned with converting the various types of sources int
 
 As a researcher i should be able to:
 \begin{enumerate}
-    \item Upload file for transcription
-    \item Transcribe recordings
-    \item\textbf{Retrieve transcribed files as a simple-text file}
-    \item\textbf{Save text file into the audio folder}
+    \item Store .wav files locally
+    \item Transcribe them using Mozilla Deepspeech
+    \item\textbf{Transcriptions are saved as simple-text files ready for analysis}
 \end{enumerate}
+
+
 \subsubsection{Literature}
 As a researcher i should be able to:
 \begin{enumerate}
-    \item Select files for analysis
-    \item Load files into a program
+    \item Select PDF documents for analysis
+    \item Place them into a folder
     \item\textbf{Convert files into a simple-text files}
-    \item\textbf{Export or Save files into the literature folder}
+    \item\textbf{Files saved into a directory ready for analysis}
 \end{enumerate}
 
 \subsubsection{Fieldnotes}
 As a researcher i should be able to:
 \begin{enumerate}
-    \item Open the Joplin program
-    \item Select and export field notes
-    \item\textbf{Export to the fieldnotes folder}
-\end{enumerate}
-
-\subsection{Organisation}
-As a researcher i should be able to:
-\begin{enumerate}
-    \item Navigate to the parent folder
-    \item\textbf{Run a script}
-    \item\textbf{See all my sources located within a single folder with their appropriate prefix attached}
+    \item Run a command that syncs my Fieldnotes
+    \item Export a preselected Notebook for analysis
+    \item\textbf{Save filed notes into a folder for analysis}
 \end{enumerate}
 
 \subsection{Analysis}
@@ -127,6 +126,201 @@ As a researcher i should be able to:
     \item\textbf{Identify new links between sources}
     \item\textit{Export the results as a report for record keeping}
 \end{enumerate}
+\newpage
+\section{Quality Assurance Testing}
+\subsection{Ensure that deepspeech is installed correctly}
+\begin{itemize}
+    \item Open the Ubuntu terminal
+    \item Type deepspeech
+    \item Press enter
+\end{itemize}
+Receive the following response:
+\begin{verbatim}
+    usage: deepspeech [-h] --model MODEL --alphabet ALPHABET [--lm [LM]]
+                  [--trie [TRIE]] --audio AUDIO [--version] [--extended]
+deepspeech: error: the following arguments are required: --model, --alphabet, --audio
+\end{verbatim}
+\subsection{Convert audio files into text}
+\begin{enumerate}
+    \item Place audio files into the project/interviews folder
+    \item Open the Ubuntu terminal
+    \item Change directory to /mnt/c/FOAR705/project/ubuntu
+    \item Bash script convertaudio.sh
+    \item Check to ensure that the audio files are no longer in the interviews folder
+    \item Check the interviews/converted folder to ensure the wav files have been moved there
+    \item Check the project/ready folder to ensure that the transcription files files have been created
+    \item Verify that the transcription files have the corresponding file name to the audio file's name and prefix of interview\_
+    \item Open one of the interview\_ files in notepad to ensure its readability
+\end{enumerate}
+convertaudio.sh script contains the following
+\begin{verbatim}
+    for f in /mnt/c/FOAR705/project/interviews/*.wav
+do
+
+deepspeech 
+--model deepspeech/models/output_graph.pbmm 
+--alphabet deepspeech/models/alphabet.txt 
+--lm deepspeech/models/lm.binary 
+--trie deepspeech/models/trie 
+--audio $f > "${f%.wav}".txt;
+
+mv $f /mnt/c/FOAR705/project/interviews/converted
+
+done
+
+cd /mnt/c/FOAR705/project/interviews
+
+bash /mnt/c/FOAR705/project/interviews/rename.sh
+\end{verbatim}
+The rename.sh script contains the following
+\begin{verbatim}
+    for f in *.txt;
+do
+mv "$f" "interview_$f"
+done
+
+for renamed in *.txt
+do
+mv $renamed /mnt/c/FOAR705/project/ready
+done
+
+\end{verbatim}
+
+\subsection{Convert PDF files into text}
+\begin{itemize}
+    \item Place PDF files for conversion into the project/articles folder
+    \item Open the Ubuntu terminal
+    \item Change directory to /mnt/c/FOAR705/project/ubuntu
+    \item Bash script convertpdf.sh
+    \item Check to ensure that the PDF files are no longer in the articles folder
+    \item Check the articles/converted folder to ensure the PDF files have been moved there
+    \item Check the project/ready folder to ensure that the text files files have been created
+    \item Verify that the converted files have the corresponding file name to their original PDF file's name and prefix of article\_
+    \item Open one of the article\_ files in notepad to ensure its readability
+\end{itemize}
+The convertpdf.sh script contains the following:
+\begin{verbatim}
+    for f in /mnt/c/foar705/project/articles/*.pdf
+do
+./pdftotext "$f" "$f.txt"
+
+mv "$f" /mnt/c/foar705/project/articles/converted
+
+done
+
+cd /mnt/c/foar705/project/articles
+
+bash renamemove.sh
+\end{verbatim}
+The renamemove.sh script contains the following:
+\begin{verbatim}
+for f in *.txt
+do
+mv "$f" "article_$f"
+
+done
+
+for f in *.txt
+do
+mv "$f" /mnt/c/foar705/project/ready
+done
+
+\end{verbatim}
+
+\subsection{Ensure Joplin is installed and configured correctly}
+\begin{itemize}
+    \item Open the Ubuntu terminal
+    \item Type joplin
+    \item Press enter
+    \item See the joplin application open and view your saved Notebooks and notes
+    \item Type :sync
+    \item Press enter
+    \item See the status update and show the syncing process
+    \item See the word Completed with the date and time of the sync
+\end{itemize}
+
+\subsubsection{Export FIELDNOTES notebook from Joplin and ready for analysis}
+\begin{itemize}
+    \item Open the Ubuntu terminal
+    \item Change directory to /mnt/c/FOAR705/project/ubuntu
+    \item Bash script convertnotes.sh
+    \item Change directory to project/fieldnotes to ensure there is no files but the renameandmove.sh script
+    \item Change directory to project/ready
+    \item Verify that the notes from the FIELDNOTES notebook are present
+    \item Check that each file has the prefix fieldnote\_
+    \item Open one of the fieldnote text files to ensure it is uncorrupted
+\end{itemize}
+
+The convertnotes.sh script contains the following:
+\begin{verbatim}
+joplin sync
+joplin export /mnt/c/foar705/project/fieldnotes/ 
+--format md --notebook FIELDNOTES
+
+for f in /mnt/c/foar705/project/fieldnotes/FIELDNOTES/*.md
+do
+mv "$f" /mnt/c/foar705/project/fieldnotes/
+
+done
+
+rmdir /mnt/c/foar705/project/fieldnotes/FIELDNOTES
+rmdir /mnt/c/foar705/project/fieldnotes/_resources
+
+cd /mnt/c/foar705/project/fieldnotes
+bash renameandmove.sh
+
+\end{verbatim}
+The renameandmove.sh script contains the following:
+\begin{verbatim}
+    for f in *.md
+
+do
+mv "$f" "fieldnote_${f%.md}.txt"
+
+done
+
+for renamed in *.txt
+do
+mv "$renamed" /mnt/c/FOAR705/project/ready
+done
+
+\end{verbatim}
+
+\subsection{Run all conversion scripts as a single step}
+\begin{enumerate}
+    \item Place 2 .wav files into the project/interviews folder
+    \item Place 2 .pdf files into the project/articles folder
+    \item Open the Ubuntu terminal
+    \item Change directory to /mnt/c/FOAR705/ubuntu
+    \item Bash the convertall.sh script
+    \item Wait for the 'Everything converted successfully' message
+    \item Navigate to the project/ready folder
+    \item Ensure that there is a text file for each wav, pdf and note within the notebook
+\end{enumerate}
+The convertall.sh script contains the following
+\begin{verbatim}
+bash convertpdf.sh
+echo Finished converting PDF to text. Ready!
+bash convertaudio.sh
+echo Finished converting audio to text. Ready!
+bash convertnote.sh
+echo Finished exporting and converting notes. Ready!
+
+echo Everything converted successfully!
+
+\end{verbatim}
+
+\subsection{Run Voyant Server for analysis}
+\begin{enumerate}
+    \item Open the VoyantServer folder
+    \item Run the VoyantServer.jar file
+    \item Click the 'Start Server' button and wait
+    \item Once the webpage loads click the Upload button
+    \item Navigate to the project/ready folder
+    \item Select all files and click upload
+    \item Look at the analysis and see that each file is easily identifiable due to its name and prefix 
+\end{enumerate}
+
 
 \section{Conclusion}
 The workflow is manageable but I believe there are many avenues for automation. The process can likely be streamlined using commandline tools such as pdftotext and potentially Google's speech to text functionality and potentially a commandline engagement with Joplin. If these avenues prove fruitful, many aspects of the conversion process can be reduced to a single script that a) submits the files to their respective software for conversion b) exports the converted files to the necessary folder c) renames the files with a prefix d) collates all the files together in a single folder for subsequent upload and analysis.\par
