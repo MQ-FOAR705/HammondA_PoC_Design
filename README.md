@@ -43,16 +43,16 @@ Follow this link if you need assistance https://tutorials.ubuntu.com/tutorial/tu
 
 Navigate the Ubuntu terminal to your base C: folder (cd /mnt/c/) and run the following commands:
 
-git clone https://github.com/MQ-FOAR705/HammondA_PoC_Design
-mv HammondA_PoC_Design FOAR705
+- git clone https://github.com/MQ-FOAR705/HammondA_PoC_Design
+- mv HammondA_PoC_Design FOAR705
 
 Then,
 
-cd /mnt/c/foar705/project/ubuntu
-curl -LO https://github.com/mozilla/DeepSpeech/releases/download/v0.5.1/deepspeech-0.5.1-models.tar.gz
-tar xvf deepspeech-0.5.1-models.tar.gz
-rm deepspeech-0.5.1-models.tar.gz
-mv deepspeech-0.5.1-models models
+- cd /mnt/c/foar705/project/ubuntu
+- curl -LO https://github.com/mozilla/DeepSpeech/releases/download/v0.5.1/deepspeech-0.5.1-models.tar.gz
+- tar xvf deepspeech-0.5.1-models.tar.gz
+- rm deepspeech-0.5.1-models.tar.gz
+- mv deepspeech-0.5.1-models models
 
 These steps have acquired each piece of software that Ubuntu will use through scripts. If you have used a different path for the project folder (e.g. one that is not /mnt/c/foar705/project) you will need to edit script pathing. 
 
