@@ -25,6 +25,7 @@ http://docs.voyant-tools.org/resources/run-your-own/voyant-server/#download
 Follow this link if you need assistance https://tutorials.ubuntu.com/tutorial/tutorial-ubuntu-on-windows#3
 
 - Once running Ubuntu install the following packages
+sudo apt-get install git
 
 - Joplin
 - - Install as per the instructions here https://joplinapp.org/
