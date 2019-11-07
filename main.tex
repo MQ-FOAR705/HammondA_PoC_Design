@@ -29,7 +29,7 @@ linktoc=all
 \pagestyle{fancy}
 \fancyhf{}
 
-\rhead{Proof of Concept Design}
+\rhead{Proof of Concept Design/ Deployment}
 \lhead{Digital Humanities}
 
 \fancyfoot[R,RO]{Aaron Hammond | 43691455}
@@ -46,7 +46,7 @@ linktoc=all
 
 \begin{center}
 %\HRule\\[0.4cm]
-\huge{Proof of Concept Design}\\[0.4cm]
+\huge{Proof of Concept Design/ Deployment}\\[0.4cm]
 \huge{Aaron Hammond}\\[0.3cm]
 \large{\today}\\[0.4cm]
 
@@ -104,7 +104,10 @@ If you prefer to copy the repository directly from Github - follow these instruc
 Navigate the Ubuntu terminal to your base C drive (cd /mnt/c/) and run the following commands:
 \begin{enumerate}
     \item git clone https://github.com/MQ-FOAR705/HammondA\_PoC\_Design
-    \item mv HammondA\_PoC\_Design FOAR705
+    \item cd HammondA\_PoC\_Design
+    \item mv project /mnt/c/foar705
+    \item cd ..
+    \item rm -r HammondA\_PoC\_Design
     \item cd /mnt/c/foar705/project/ubuntu/deepspeech
     \item curl -LO https://github.com/mozilla/DeepSpeech/releases/download/v0.5.1/deepspeech-0.5.1-models.tar.gz
     \item tar xvf deepspeech-0.5.1-models.tar.gz
@@ -219,7 +222,7 @@ deepspeech: error: the following arguments are required: --model, --alphabet, --
     \item Verify that the transcription files have the corresponding file name to the audio file's name and prefix of interview\_
     \item Open one of the interview\_ files in notepad to ensure its readability
 \end{enumerate}
-convertaudio.sh script contains the following
+convertaudio.sh script contains the following:
 \begin{verbatim}
     for f in /mnt/c/FOAR705/project/interviews/*.wav
 do
@@ -358,13 +361,13 @@ done
     \item Place 2 .wav files into the project/interviews folder
     \item Place 2 .pdf files into the project/articles folder
     \item Open the Ubuntu terminal
-    \item Change directory to /mnt/c/FOAR705/ubuntu
+    \item Change directory to /mnt/c/FOAR705/project/ubuntu
     \item Bash the convertall.sh script
     \item Wait for the 'Everything converted successfully' message
     \item Navigate to the project/ready folder
     \item Ensure that there is a text file for each wav, pdf and note within the notebook
 \end{enumerate}
-The convertall.sh script contains the following
+The convertall.sh script contains the following:
 \begin{verbatim}
 bash convertpdf.sh
 echo Finished converting PDF to text. Ready!
