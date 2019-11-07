@@ -28,18 +28,19 @@ Follow this link if you need assistance https://tutorials.ubuntu.com/tutorial/tu
 sudo apt-get install git
 
 - Joplin
-- - Install as per the instructions here https://joplinapp.org/
-- - Once installed, run joplin and login to your account
-- - Create a Notebook called FIELDNOTES
-- - Run the sync command to ensure that it works and can connect without issue
+  - Install as per the instructions here https://joplinapp.org/
+  - Once installed, run joplin and login to your account
+  - Create a Notebook called FIELDNOTES
+  - Run the sync command to ensure that it works and can connect without issue
 
 - Mozilla Deepspeech
-- - Run command pip3 install deepspeech
+  - Run command pip3 install deepspeech
 
 - PDF to Text
-- - Download and install the XPDF tool for converting PDF to text files
--- https://www.xpdfreader.com/download.html
--- Utilise the readme to ensure that you can run the pdftotext command, if not there is a small change you can make to the convertpdf.sh script
+  - Download and install the XPDF tool for converting PDF to text files
+  - https://www.xpdfreader.com/download.html
+  
+Utilise the readme to ensure that you can run the pdftotext command, if not there is a small change you can make to the convertpdf.sh script
 
 
 
@@ -61,10 +62,10 @@ This will copy the project repository, placing the relevant folder structure, sc
 Navigate the Ubuntu terminal to your base C: folder (cd /mnt/c/) and run the following commands:
 
 - git clone https://github.com/MQ-FOAR705/HammondA_PoC_Design
-- mv HammondA_PoC_Design FOAR705
-
-Then,
-
+- cd HammondA_PoC_Design
+- mv project /mnt/c/foar705
+- cd ..
+- rm -r HammondA_PoC_Design
 - cd /mnt/c/foar705/project/ubuntu/deepspeech
 - curl -LO https://github.com/mozilla/DeepSpeech/releases/download/v0.5.1/deepspeech-0.5.1-models.tar.gz
 - tar xvf deepspeech-0.5.1-models.tar.gz
