@@ -32,14 +32,15 @@ Follow this link if you need assistance https://tutorials.ubuntu.com/tutorial/tu
 - - Run command pip3 install deepspeech
 
 - PDF to Text
-- - Already included in the respository
+- - Download and install the XPDF tool for converting PDF to text files
+-- https://www.xpdfreader.com/download.html
+-- Utilise the readme to ensure that you can run the pdftotext command 
 
 
 
 # Copy Respository
 
 - This will copy the project repository, placing the relevant folder structure, scripts and necessary files onto your computer. 
-
 
 Navigate the Ubuntu terminal to your base C: folder (cd /mnt/c/) and run the following commands:
 
