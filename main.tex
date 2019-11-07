@@ -7,7 +7,7 @@
 \usepackage{verbatimbox}
 \usepackage{geometry}
 \usepackage[pagestyles]{titlesec}
-
+\usepackage{url}
 
 
 %--Parameters
@@ -55,10 +55,77 @@ linktoc=all
 
 %--
 
-This document's purpose is to outline the software project that I have been working on for Digital Humanities. It is a solution that converts a range of file types to text files for analysis within the VoyantServer software. 
+This document's purpose is to outline the software project that I have been working on for Digital Humanities. It is a solution that converts a range of file types to text files for analysis within the VoyantServer software. By placing the files in their necessary locations, this solution will convert and arrange all files within a directory ready for analysis and perform an export of the FIELDNOTES notebook in Joplin. Afterwards the user can simply open Voyant Server and select the converted and exported files for analysis.
 
 \section{Prerequisites}
+Please ensure that you are running Windows 10 and have the following software installed:
+\begin{itemize}
+    \item Ubuntu Distribution (available in the Windows Store)
+    \item Java Version 8.0+
+    \item Have 7zip installed (optional)
+    
+\end{itemize}
 
+\section{Installation}
+\subsection{Setup}
+\begin{enumerate}
+    \item In your C: create the folder FOAR705
+    \item Download \href{http://docs.voyant-tools.org/resources/run-your-own/voyant-server/#download}{Voyant Server}
+    \item Extract the zip file to C:/FOAR705
+    \item Open the Ubuntu application
+    \item Create a username and password
+    \item Install the git package with the command sudo apt-get install git
+\end{enumerate}
+
+\subsection{Install Joplin}
+\begin{enumerate}
+    \item Install as per the instructions here https://joplinapp.org/
+    \item Once installed, run joplin and login to your account
+    \item Enter : to run commands
+    \item Create a Notebook called FIELDNOTES
+    \item Run the sync command by typing :sync
+\end{enumerate}
+
+\subsection{Install Deepspeech}
+\begin{enumerate}
+    \item Run command pip3 install deepspeech
+\end{enumerate}
+
+
+\subsection{Copy Repository Option: 1}
+In Windows, Download and extract this file to the C:/FOAR705 folder
+
+\url{https://cloudstor.aarnet.edu.au/plus/s/UPb7f1kUdGZMa7w}
+
+
+\subsection{Copy Repository Option: 2}
+If you prefer to copy the repository directly from Github - follow these instructions instead. This will copy the project repository, placing the relevant folder structure, scripts and necessary files onto your computer. 
+
+Navigate the Ubuntu terminal to your base C drive (cd /mnt/c/) and run the following commands:
+\begin{enumerate}
+    \item git clone https://github.com/MQ-FOAR705/HammondA\_PoC\_Design
+    \item mv HammondA\_PoC\_Design FOAR705
+    \item cd /mnt/c/foar705/project/ubuntu/deepspeech
+    \item curl -LO https://github.com/mozilla/DeepSpeech/releases/download/v0.5.1/deepspeech-0.5.1-models.tar.gz
+    \item tar xvf deepspeech-0.5.1-models.tar.gz
+    \item rm deepspeech-0.5.1-models.tar.gz
+    \item mv deepspeech-0.5.1-models models
+\end{enumerate}
+
+\subsection{Placing the relevant files}
+Within the project directory there is a set folder structure, interviews (for wav audio files), fieldnotes (for notes stored in Joplin) and articles (for PDF files). Currently there are test files already placed within these directories, if you would like to add your own please do so in the correct directory according to the file type.
+
+\subsection{Scripts}
+Open up the Ubuntu terminal, change directory to /mnt/c/foar705/ubuntu folder and bash the convertall script.
+
+\subsection{Analysis}
+\begin{enumerate}
+    \item Open the Voyant Tools by running the VoyantServer.jar file within the previously extracted folder.
+    \item Click Start Server
+    \item Wait for web page to load
+    \item Click the Upload button and navigate to the C:/FOAR705/Project/ready folder
+    \item Select all files and click upload.
+\end{enumerate}
 
 \section{Stories and Acceptance Criteria}
 \subsection{User Stories}
@@ -321,8 +388,5 @@ echo Everything converted successfully!
     \item Look at the analysis and see that each file is easily identifiable due to its name and prefix 
 \end{enumerate}
 
-
-\section{Conclusion}
-The workflow is manageable but I believe there are many avenues for automation. The process can likely be streamlined using commandline tools such as pdftotext and potentially Google's speech to text functionality and potentially a commandline engagement with Joplin. If these avenues prove fruitful, many aspects of the conversion process can be reduced to a single script that a) submits the files to their respective software for conversion b) exports the converted files to the necessary folder c) renames the files with a prefix d) collates all the files together in a single folder for subsequent upload and analysis.\par
 
 \end{document}
