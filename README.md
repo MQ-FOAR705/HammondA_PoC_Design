@@ -2,7 +2,7 @@
 This project and collection of software and scripts was designed as part of the Digital Humanities software deployment. It is a text analytical tool that converts various types of files into a single workable format and then submits them together for analysis.
 
 # Outline
-This software solution will need to be run on a Windows computer with the Ubuntu distribution available through the Windows store. This solution will utilise three different tools seamlessly. Please ensure you have an account setup in Joplin before continuing.
+This software solution will need to be run on a Windows computer with the Ubuntu distribution available through the Windows store. This solution will utilise three different tools seamlessly. Please ensure you have an account for Joplin and a notebook named FIELDNOTES.
 
 - Mozilla Deepspeech - https://github.com/mozilla/DeepSpeech
 - Xpdftotext - https://www.xpdfreader.com/pdftotext-man.html
@@ -10,7 +10,7 @@ This software solution will need to be run on a Windows computer with the Ubuntu
 
 This demonstration of this solution will utilise two files of academic literature in a PDF format. Three very short audio files for transcription and two files of fieldnotes stored within Joplin.
 
-By placing the files in their necessary locations, this solution will convert and arrange all files within a directory ready for analysis. Afterwich the user can simply open Voyant Server and select the directory for analysis.
+By placing the files in their necessary locations, this solution will convert and arrange all files within a directory ready for analysis and perform an export of the FIELDNOTES notebook in Joplin. Afterwich the user can simply open Voyant Server and select the converted and exported files for analysis.
 
 # Setup
 - In your C: create the folder FOAR705
@@ -91,5 +91,13 @@ Click the Upload button and navigate to the C:/FOAR705/Project/ready folder
 Select all files and click upload.
 
 # Issues
+Current issues with this solution include:
+- Deepspeech does not work with all CPU types and may produce errors
+- Analysis is somewhat skewed due to the larger quantity of information typically in PDF files
+- Is limited to strict folder structure (without making changes to scripts)
+- Is limited to previously identified Joplin Notebooks for analysis
+- Seemingly no means to automate the upload process into Voyant Tools
 
 # Future Implementations
+- Introduce a limitation on the number of words taken from PDF doucments for a more balanced analysis
+- Utilise a webserver to potentially perform analysis on more than one file at a time
