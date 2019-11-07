@@ -38,7 +38,7 @@ Follow this link if you need assistance https://tutorials.ubuntu.com/tutorial/tu
 - PDF to Text
 - - Download and install the XPDF tool for converting PDF to text files
 -- https://www.xpdfreader.com/download.html
--- Utilise the readme to ensure that you can run the pdftotext command 
+-- Utilise the readme to ensure that you can run the pdftotext command, if not there is a small change you can make to the convertpdf.sh script
 
 
 
@@ -53,7 +53,7 @@ These steps have acquired each piece of software that Ubuntu will use through sc
 
 
 
-###Ignore the following as without full permissions I can't make adjustments to my respository.
+### Ignore the following as without full permissions I can't make adjustments to my respository.
 This will copy the project repository, placing the relevant folder structure, scripts and necessary files onto your computer. 
 
 Navigate the Ubuntu terminal to your base C: folder (cd /mnt/c/) and run the following commands:
