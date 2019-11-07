@@ -53,8 +53,8 @@ These steps have acquired each piece of software that Ubuntu will use through sc
 
 
 
-Ignore the following as without full permissions I can't make adjustments to my respository.
-(((- This will copy the project repository, placing the relevant folder structure, scripts and necessary files onto your computer. 
+###Ignore the following as without full permissions I can't make adjustments to my respository.
+This will copy the project repository, placing the relevant folder structure, scripts and necessary files onto your computer. 
 
 Navigate the Ubuntu terminal to your base C: folder (cd /mnt/c/) and run the following commands:
 
@@ -67,7 +67,7 @@ Then,
 - curl -LO https://github.com/mozilla/DeepSpeech/releases/download/v0.5.1/deepspeech-0.5.1-models.tar.gz
 - tar xvf deepspeech-0.5.1-models.tar.gz
 - rm deepspeech-0.5.1-models.tar.gz
-- mv deepspeech-0.5.1-models models)))
+- mv deepspeech-0.5.1-models models
 
 # Placing the relevant files
 Within the project directory there is a set folder structure, interviews (for audio files), fieldnotes (for notes stored in Joplin) and articles (for PDF files). Currently there are test files already placed within these directories, if you would like to add your own please do so in the correct directory according to the file type.
