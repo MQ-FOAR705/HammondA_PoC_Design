@@ -25,20 +25,26 @@ Follow this link if you need assistance https://tutorials.ubuntu.com/tutorial/tu
 - Joplin
 - - Install as per the instructions here https://joplinapp.org/
 - - Once installed, run joplin and login to your account
+- - Create a Notebook called FIELDNOTES
+- - Run the sync command to ensure that it works and can connect without issue
 
 - Mozilla Deepspeech
-- - Run command 
-- - pip3 install deepspeech
+- - Run command pip3 install deepspeech
 
 - PDF to Text
 - - Already included in the respository
 
-Navigate the Ubuntu terminal to where you would like the files, folders and scripts to be stored (suggested C:/FOAR705) and run the following command:
-
-
 
 
 # Copy Respository
+
+- This will copy the project repository, placing the relevant folder structure, scripts and necessary files onto your computer. 
+
+
+Navigate the Ubuntu terminal to where you would like the files, folders and scripts to be stored (suggested C:/FOAR705) and run the following command:
+curl -LO https://github.com/MQ-FOAR705/HammondA_PoC_Design/project
+
+These steps have acquired each piece of software that Ubuntu will use through scripts. If you have used a different path for the project folder (e.g. one that is not /mnt/c/foar705/project) you will need to edit script pathing. 
 
 # Scripts
 
