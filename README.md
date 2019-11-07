@@ -61,16 +61,16 @@ This will copy the project repository, placing the relevant folder structure, sc
 
 Navigate the Ubuntu terminal to your base C: folder (cd /mnt/c/) and run the following commands:
 
-1 `git clone https://github.com/MQ-FOAR705/HammondA_PoC_Design`
-2 `cd HammondA_PoC_Design`
-3 `mv project /mnt/c/foar705`
-4 `cd ..`
-5 `rm -r HammondA_PoC_Design`
-6 `cd /mnt/c/foar705/project/ubuntu/deepspeech`
-7 `curl -LO https://github.com/mozilla/DeepSpeech/releases/download/v0.5.1/deepspeech-0.5.1-models.tar.gz`
-8 `tar xvf deepspeech-0.5.1-models.tar.gz`
-9 `rm deepspeech-0.5.1-models.tar.gz`
-10 `mv deepspeech-0.5.1-models models`
+1. `git clone https://github.com/MQ-FOAR705/HammondA_PoC_Design`
+2. `cd HammondA_PoC_Design`
+3. `mv project /mnt/c/foar705`
+4. `cd ..`
+5. `rm -r HammondA_PoC_Design`
+6. `cd /mnt/c/foar705/project/ubuntu/deepspeech`
+7. `curl -LO https://github.com/mozilla/DeepSpeech/releases/download/v0.5.1/deepspeech-0.5.1-models.tar.gz`
+8. `tar xvf deepspeech-0.5.1-models.tar.gz`
+9. `rm deepspeech-0.5.1-models.tar.gz`
+10. `mv deepspeech-0.5.1-models models`
 
 # Placing the relevant files
 Within the project directory there is a set folder structure, interviews (for audio files), fieldnotes (for notes stored in Joplin) and articles (for PDF files). Currently there are test files already placed within these directories, if you would like to add your own please do so in the correct directory according to the file type.
@@ -83,10 +83,10 @@ While in the ubuntu folder of the project, run the convertall script as follows
 # Analysis
 Open the Voyant Tools by running the VoyantServer.jar file within the previously extracted folder.
 
-1 Click Start Server
-2 Wait for web page to load
-3 Click the Upload button and navigate to the C:/FOAR705/Project/ready folder
-4 Select all files and click upload.
+1. Click Start Server
+2. Wait for web page to load
+3. Click the Upload button and navigate to the C:/FOAR705/Project/ready folder
+4. Select all files and click upload.
 
 # Issues
 Current issues with this solution include:
