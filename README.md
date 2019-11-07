@@ -13,7 +13,7 @@ This demonstration of this solution will utilise two files of academic literatur
 By placing the files in their necessary locations, this solution will convert and arrange all files within a directory ready for analysis and perform an export of the FIELDNOTES notebook in Joplin. Afterwich the user can simply open Voyant Server and select the converted and exported files for analysis.
 
 # Setup
-- In your C: create the folder FOAR705
+- Create the folder FOAR705 in the root of your C drive (C:/FOAR705)
 
 - Download Voyant Server
 http://docs.voyant-tools.org/resources/run-your-own/voyant-server/#download
@@ -25,9 +25,9 @@ http://docs.voyant-tools.org/resources/run-your-own/voyant-server/#download
 Follow this link if you need assistance https://tutorials.ubuntu.com/tutorial/tutorial-ubuntu-on-windows#3
 
 - Once running Ubuntu run the following commands to install the necessary packages:
-  -`sudo apt-get install git`
-  -`sudo apt-get install python3-pip`
-  -`sudo apt-get install -y nodejs`
+  - `sudo apt-get install git`
+  - `sudo apt-get install python3-pip`
+  - `sudo apt-get install -y nodejs`
 - Joplin
   - Install Joplin within the Ubuntu app as per the instructions here under "Linux or Windows (via WSL)" <https://github.com/laurent22/joplin>
   - Once installed, run joplin and login to your account
