@@ -47,6 +47,7 @@ sudo apt-get install git
 In Windows,
 Download and extract this file to the C:/FOAR705 folder.
 
+https://cloudstor.aarnet.edu.au/plus/s/UPb7f1kUdGZMa7w
 
 
 
@@ -54,7 +55,7 @@ These steps have acquired each piece of software that Ubuntu will use through sc
 
 
 
-### Ignore the following as without full permissions I can't make adjustments to my respository.
+### If you prefer to copy the repository directly from Github - follow the following instructions instead.
 This will copy the project repository, placing the relevant folder structure, scripts and necessary files onto your computer. 
 
 Navigate the Ubuntu terminal to your base C: folder (cd /mnt/c/) and run the following commands:
@@ -64,7 +65,7 @@ Navigate the Ubuntu terminal to your base C: folder (cd /mnt/c/) and run the fol
 
 Then,
 
-- cd /mnt/c/foar705/project/ubuntu
+- cd /mnt/c/foar705/project/ubuntu/deepspeech
 - curl -LO https://github.com/mozilla/DeepSpeech/releases/download/v0.5.1/deepspeech-0.5.1-models.tar.gz
 - tar xvf deepspeech-0.5.1-models.tar.gz
 - rm deepspeech-0.5.1-models.tar.gz
