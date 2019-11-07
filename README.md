@@ -24,13 +24,14 @@ http://docs.voyant-tools.org/resources/run-your-own/voyant-server/#download
 - Download and install the Ubuntu distribution for Windows.
 Follow this link if you need assistance https://tutorials.ubuntu.com/tutorial/tutorial-ubuntu-on-windows#3
 
-- Once running Ubuntu install the following packages
-sudo apt-get install git
-
+- Once running Ubuntu run the following commands to install the necessary packages:
+  -`sudo apt-get install git`
+  -`sudo apt-get install python3-pip`
+  -`sudo apt-get install -y nodejs`
 - Joplin
-  - Install as per the instructions here https://joplinapp.org/
+  - Install Joplin within the Ubuntu app as per the instructions here under "Linux or Windows (via WSL)" <https://github.com/laurent22/joplin>
   - Once installed, run joplin and login to your account
-  - Create a Notebook called FIELDNOTES
+  - Create a Notebook called FIELDNOTES (`:mkbook FIELDNOTES`)
   - Run the `:sync` command to ensure that it works and can connect without issue
 
 - Mozilla Deepspeech
@@ -59,7 +60,7 @@ These steps have acquired each piece of software that Ubuntu will use through sc
 ### If you prefer to copy the repository directly from Github - follow the following instructions instead.
 This will copy the project repository, placing the relevant folder structure, scripts and necessary files onto your computer. 
 
-Navigate the Ubuntu terminal to your base C: folder (cd /mnt/c/) and run the following commands:
+Navigate the Ubuntu terminal to your base C: folder (`cd /mnt/c/`) and run the following commands:
 
 1. `git clone https://github.com/MQ-FOAR705/HammondA_PoC_Design`
 2. `cd HammondA_PoC_Design`
